@@ -183,6 +183,10 @@ public class PizzaTime {
 
         int StreetNumber = getValidIntInput("Enter your street number: ", "Street number must be an integer.");
 
+        while(StreetNumber == 0){
+            StreetNumber = getValidIntInput("Please enter a valid street number: ", "Street number must be an integer.");
+        }
+
         
         System.out.print("Enter your Postal Code (A1A 1A1): ");
         String PostalCode = scanner.nextLine().toUpperCase();
@@ -380,7 +384,7 @@ public class PizzaTime {
             case "mountain":
                 return 4.0;
             default:
-                return 5.0; // Default delivery fee
+                return 0;
         }
     }
 
@@ -393,7 +397,7 @@ public class PizzaTime {
             case 3:
                 return "Large";
             default:
-                return "Unknown Size";
+                return "";
         }
     }
 
@@ -411,13 +415,12 @@ public class PizzaTime {
         }
     }
 
-    public static void ClearConsole(){
+    private static void ClearConsole(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    public static String capitalizeUsername(String username) {
-
+    private static String capitalizeUsername(String username) {
         return username.substring(0, 1).toUpperCase() + username.substring(1).toLowerCase();
     }
 
