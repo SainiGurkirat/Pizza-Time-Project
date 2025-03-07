@@ -435,7 +435,7 @@ public class PizzaTime {
             if (i == 3) {
                 continue;
             }
-
+            
             if (i <= 2 && i % 2 == 0 && !Character.isLetter(c) ) {
                 return false;
             }
